@@ -9,7 +9,6 @@ interface InscricaoServiceInterface
 {
     /**
      * @param InscricaoDTO $inscricaoDTO
-     * @return mixed
      */
     public function inscrever(InscricaoDTO $inscricaoDTO);
 }

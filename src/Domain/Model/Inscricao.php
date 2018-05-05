@@ -40,6 +40,7 @@ class Inscricao
     ) {
         $this->candidato = $candidato;
         $this->oportunidade = $oportunidade;
+        $this->ativa = true;
     }
 
     public function generateCodigoVerificacao()

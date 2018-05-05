@@ -17,4 +17,20 @@ class InscricaoDTO
      * @var Oportunidade
      */
     private $oportunidade;
+
+    /**
+     * @return Candidato
+     */
+    public function getCandidato()
+    {
+        return $this->candidato;
+    }
+
+    /**
+     * @return Oportunidade
+     */
+    public function getOportunidade()
+    {
+        return $this->oportunidade;
+    }
 }

@@ -66,7 +66,7 @@ final class StorageService
     private function gerarNomeAleatorio()
     {
         do {
-            $nomeGerado = uniqid('', true) .'.docx';
+            $nomeGerado = uniqid('', true);
         } while ($this->fileSystem->has($nomeGerado));
 
         return $nomeGerado;

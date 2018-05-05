@@ -55,4 +55,20 @@ class Candidato
      * @var ArrayCollection
      */
     private $experienciaProfissional;
+
+    /**
+     * @return string
+     */
+    public function getAnexo()
+    {
+        return $this->anexo;
+    }
+
+    /**
+     * @param string $fileName
+     */
+    public function addAnexo(string $fileName)
+    {
+        $this->anexo = $fileName;
+    }
 }

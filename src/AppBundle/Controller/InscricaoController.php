@@ -20,7 +20,6 @@ class InscricaoController extends FOSRestController
 
         try {
             $inscricaoDTO = $serializerService->converter($request->getContent(), InscricaoDTO::class);
-            dump($inscricaoDTO); die;
             $inscricaoService->inscrever($inscricaoDTO);
         } catch (\Exception $exception) {
             return $jsonResponseService->badRequest($exception->getMessage());
