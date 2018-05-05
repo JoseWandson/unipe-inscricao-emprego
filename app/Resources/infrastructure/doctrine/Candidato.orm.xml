@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity name="Candidato" table="candidato">
+  <entity name="Domain\Model\Candidato" table="candidato">
     <id name="idCandidato" type="integer" column="id_candidato">
       <generator strategy="IDENTITY"/>
     </id>
@@ -39,7 +39,11 @@
         <option name="fixed"/>
       </options>
     </field>
-    <many-to-many field="idExperienciaProfissional" target-entity="ExperienciaProfissional" inversed-by="idCandidato" fetch="LAZY">
+
+    <many-to-many field="experienciaProfissional" target-entity="Domain\Model\ExperienciaProfissional" inversed-by="idCandidato" fetch="LAZY">
+      <cascade>
+        <cascade-persist/>
+      </cascade>
       <join-table name="candidato_exp_profissional">
         <join-columns>
           <join-column name="id_candidato" referenced-column-name="id_candidato"/>
@@ -49,7 +53,11 @@
         </inverse-join-columns>
       </join-table>
     </many-to-many>
-    <many-to-many field="idHabilidadeTecnica" target-entity="HabilidadeTecnica" inversed-by="idCandidato" fetch="LAZY">
+
+    <many-to-many field="habilidadeTecnica" target-entity="Domain\Model\HabilidadeTecnica" inversed-by="idCandidato" fetch="LAZY">
+      <cascade>
+        <cascade-persist/>
+      </cascade>
       <join-table name="candidato_habilidade_tecnica">
         <join-columns>
           <join-column name="id_candidato" referenced-column-name="id_candidato"/>

@@ -2,14 +2,15 @@
 
 namespace AppBundle\Service;
 
-use Domain\Model\Inscricao;
 use Domain\Service\InscricaoServiceInterface;
+use Presentation\DataTransferObject\InscricaoDTO;
 
 class InscricaoService implements InscricaoServiceInterface
 {
     /**
+     * @param InscricaoDTO $inscricaoDTO
      */
-    public function inscrever(Inscricao $inscricao)
+    public function inscrever(InscricaoDTO $inscricaoDTO)
     {
         // TODO: Implement inscrever() method.
     }

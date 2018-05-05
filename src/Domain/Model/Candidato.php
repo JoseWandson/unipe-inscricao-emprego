@@ -2,12 +2,14 @@
 
 namespace Domain\Model;
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 class Candidato
 {
     /**
      * @var int
      */
-    private $id;
+    private $idCandidato;
 
     /**
      * @var string
@@ -38,4 +40,19 @@ class Candidato
      * @var string
      */
     private $anexo;
+
+    /**
+     * @var string
+     */
+    private $link;
+
+    /**
+     * @var ArrayCollection
+     */
+    private $habilidadeTecnica;
+
+    /**
+     * @var ArrayCollection
+     */
+    private $experienciaProfissional;
 }

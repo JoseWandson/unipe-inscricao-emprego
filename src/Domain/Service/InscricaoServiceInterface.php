@@ -3,12 +3,13 @@
 namespace Domain\Service;
 
 use Domain\Model\Inscricao;
+use Presentation\DataTransferObject\InscricaoDTO;
 
 interface InscricaoServiceInterface
 {
     /**
-     * @param Inscricao $inscricao
+     * @param InscricaoDTO $inscricaoDTO
      * @return mixed
      */
-    public function inscrever(Inscricao $inscricao);
+    public function inscrever(InscricaoDTO $inscricaoDTO);
 }

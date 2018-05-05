@@ -5,6 +5,11 @@ namespace Domain\Model;
 class Inscricao
 {
     /**
+     * @var int
+     */
+    private $idInscricao;
+
+    /**
      * @var Candidato
      */
     private $candidato;
