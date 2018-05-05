@@ -20,6 +20,11 @@ class Inscricao
     private $codigoConfirmacao;
 
     /**
+     * @var bool
+     */
+    private $ativa;
+
+    /**
      * Inscricao constructor.
      * @param Candidato $candidato
      * @param Oportunidade $oportunidade
