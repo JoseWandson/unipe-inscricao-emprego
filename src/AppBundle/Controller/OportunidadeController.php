@@ -9,12 +9,14 @@ use Presentation\DataTransferObject\OportunidadeDTO;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class OportunidadeController extends FOSRestController
 {
     /**
      * @Rest\Post("oportunidade/salvar")
      * @param Request $request
+     * @return Response
      */
     public function salvarAction(Request $request)
     {

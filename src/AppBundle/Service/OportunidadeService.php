@@ -28,6 +28,6 @@ class OportunidadeService implements OportunidadeServiceInterface
      */
     public function salvar(Oportunidade $oportunidade)
     {
-        // TODO: Implement salvar() method.
+        $this->oportunidadeRepository->save($oportunidade);
     }
 }
