@@ -30,4 +30,13 @@ class OportunidadeService implements OportunidadeServiceInterface
     {
         $this->oportunidadeRepository->save($oportunidade);
     }
+
+    /**
+     * @param int $id
+     * @return Oportunidade
+     */
+    public function buscarPorId(int $id)
+    {
+        return $this->oportunidadeRepository->find($id);
+    }
 }
