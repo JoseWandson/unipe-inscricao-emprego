@@ -38,10 +38,17 @@ class InscricaoService implements InscricaoServiceInterface
      */
     public function inscrever(InscricaoDTO $inscricaoDTO)
     {
-        $anexo = $inscricaoDTO->getCandidato()->getAnexo();
-        $fileName = $this->storageService->salvarBase64($anexo);
         $candidato = $inscricaoDTO->getCandidato();
-        $candidato->addAnexo($fileName);
+        $anexo = $inscricaoDTO->getCandidato()->getAnexo();
+
+        if ($anexo) {
+            $fileName = $this->storageService->salvarBase64($anexo);
+            $candidato->addAnexo($fileName);
+        }
+
+        if ($this->inscricaoRepository->findOneInscricaoByOportunidade($inscricaoDTO)) {
+            throw new \Exception("Candidato já inscrito nesta oportunidade");
+        }
 
         $inscricao = new Inscricao(
             $candidato,
@@ -50,6 +57,6 @@ class InscricaoService implements InscricaoServiceInterface
 
         $inscricao->generateCodigoVerificacao();
 
-        dump($inscricao); die;
+
     }
 }
