@@ -33,4 +33,44 @@ class Oportunidade
      * @var integer
      */
     private $qtdVagas;
+
+    /**
+     * @return string
+     */
+    public function getTitulo()
+    {
+        return $this->titulo;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescricao()
+    {
+        return $this->descricao;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDtInicio()
+    {
+        return $this->dtInicio;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDtFinal()
+    {
+        return $this->dtFinal;
+    }
+
+    /**
+     * @return int
+     */
+    public function getQtdVagas()
+    {
+        return $this->qtdVagas;
+    }
 }
