@@ -35,7 +35,7 @@ class OportunidadeController extends FOSRestController
 
     /**
      * @Rest\Post("oportunidade/buscar/{id}")
-     * @param Request $request
+     * @param int $id
      * @return Response
      */
     public function listarAction(int $id)
