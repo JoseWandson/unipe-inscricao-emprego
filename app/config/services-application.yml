@@ -1,0 +1,4 @@
+services:
+    app.oportunidade.service:
+        class: AppBundle\Service\OportunidadeService
+        arguments: ['@oportunidade.repository']

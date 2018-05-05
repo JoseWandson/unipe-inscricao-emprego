@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ExperienciaProfissional" table="experiencia_profissional">
+    <id name="idExperienciaProfissional" type="integer" column="id_experiencia_profissional">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="cargo" type="string" column="cargo" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="descricao" type="text" column="descricao" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="dtInicio" type="datetime" column="dt_inicio" nullable="false"/>
+    <field name="dtFinal" type="datetime" column="dt_final" nullable="false"/>
+    <field name="isTrabalhoAtual" type="boolean" column="is_trabalho_atual" nullable="true"/>
+    <many-to-many field="idCandidato" target-entity="Candidato" mapped-by="idExperienciaProfissional" fetch="LAZY"/>
+  </entity>
+</doctrine-mapping>

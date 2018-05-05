@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Inscricao" table="inscricao">
+    <indexes>
+      <index name="IDX_5439E49CA852DB7D" columns="id_candidato"/>
+      <index name="IDX_5439E49CF3C747FE" columns="id_oportunidade"/>
+    </indexes>
+    <id name="idInscricao" type="integer" column="id_inscricao">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="codigoConfirmacao" type="string" column="codigo_confirmacao" length="6" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="isAtiva" type="boolean" column="is_ativa" nullable="true"/>
+    <many-to-one field="idCandidato" target-entity="Candidato" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_candidato" referenced-column-name="id_candidato"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idOportunidade" target-entity="Oportunidade" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_oportunidade" referenced-column-name="id_oportunidade"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

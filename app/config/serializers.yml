@@ -1,0 +1,14 @@
+jms_serializer:
+    handlers:
+        datetime:
+            default_format: 'd/m/Y'
+            default_timezone: 'UTC'
+    metadata:
+        auto_detection: true
+        directories:
+            DomainModel:
+                namespace_prefix: Domain\Model
+                path: '%kernel.root_dir%/Resources/infrastructure/serializer/jms'
+            DataTransferObject:
+                namespace_prefix: Presentation\DataTransferObject
+                path: '%kernel.root_dir%/Resources/infrastructure/serializer/jms/dto'

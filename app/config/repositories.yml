@@ -1,0 +1,6 @@
+services:
+    oportunidade.repository:
+        class:  Infrastructure\Persistence\Doctrine\OportunidadeRepository
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - Domain\Model\Oportunidade
