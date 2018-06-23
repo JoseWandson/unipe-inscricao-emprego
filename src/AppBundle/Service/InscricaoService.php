@@ -68,33 +68,33 @@ class InscricaoService implements InscricaoServiceInterface
 
         $inscricao->generateCodigoVerificacao();
 
-        $this->api->notifications->add([
-            'contents' => [
-                'en' => 'Notification message'
-            ],
-            'included_segments' => ['All'],
-            'data' => ['foo' => 'bar'],
-            'isChrome' => true,
-            'send_after' => new \DateTime('1 hour'),
-            'filters' => [
-                [
-                    'field' => 'tag',
-                    'key' => 'is_vip',
-                    'relation' => '!=',
-                    'value' => 'true',
-                ],
-                [
-                    'operator' => 'OR',
-                ],
-                [
-                    'field' => 'tag',
-                    'key' => 'is_admin',
-                    'relation' => '=',
-                    'value' => 'true',
-                ],
-            ],
-            // ..other options
-        ]);
+//        $this->api->notifications->add([
+//            'contents' => [
+//                'en' => 'Notification message'
+//            ],
+//            'included_segments' => ['All'],
+//            'data' => ['foo' => 'bar'],
+//            'isChrome' => true,
+//            'send_after' => new \DateTime('1 hour'),
+//            'filters' => [
+//                [
+//                    'field' => 'tag',
+//                    'key' => 'is_vip',
+//                    'relation' => '!=',
+//                    'value' => 'true',
+//                ],
+//                [
+//                    'operator' => 'OR',
+//                ],
+//                [
+//                    'field' => 'tag',
+//                    'key' => 'is_admin',
+//                    'relation' => '=',
+//                    'value' => 'true',
+//                ],
+//            ],
+//            // ..other options
+//        ]);
 
         $this->inscricaoRepository->save($inscricao);
     }
@@ -117,36 +117,6 @@ class InscricaoService implements InscricaoServiceInterface
      */
     public function pesquisarCandidatos(Oportunidade $oportunidade)
     {
-        $this->onesignal->notifications->add([
-            'contents' => [
-                'en' => 'Notification message'
-            ],
-            'included_segments' => ['All'],
-            'data' => ['foo' => 'bar'],
-            'isChrome' => true,
-            'send_after' => new \DateTime('1 hour'),
-            'filters' => [
-                [
-                    'field' => 'tag',
-                    'key' => 'is_vip',
-                    'relation' => '!=',
-                    'value' => 'true',
-                ],
-                [
-                    'operator' => 'OR',
-                ],
-                [
-                    'field' => 'tag',
-                    'key' => 'is_admin',
-                    'relation' => '=',
-                    'value' => 'true',
-                ],
-            ],
-            // ..other options
-        ]);
-
-        var_dump($this->onesignal->apps->getAll()); die;
-
         if ($oportunidade->getIdOportunidade()) {
             return $this->inscricaoRepository->pesquisarCandidatos($oportunidade);
         }
