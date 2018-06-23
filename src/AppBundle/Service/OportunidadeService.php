@@ -37,6 +37,14 @@ class OportunidadeService implements OportunidadeServiceInterface
      */
     public function buscarPorId(int $id)
     {
-        return $this->oportunidadeRepository->find($id);
+        return $this->oportunidadeRepository->findOneById($id);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function buscarTodos()
+    {
+        return $this->oportunidadeRepository->buscarTodos();
     }
 }

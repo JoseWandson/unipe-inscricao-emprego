@@ -49,3 +49,8 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+adelplace_one_signal:
+    application_id: '4c890ef8-175a-4073-b1ab-a702f60c0bdb'
+    application_auth_key: 'MmY4ZTc4NDEtMzkyNy00ZTY2LWE0NWItZTc1NWQ2YTJjNjA4'
+    user_auth_key: 'my user auth key'

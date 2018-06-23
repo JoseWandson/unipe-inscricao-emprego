@@ -5,4 +5,8 @@ services:
 
     app.inscricao.service:
         class: AppBundle\Service\InscricaoService
-        arguments: ['@inscricao.repository', '@infra.storage.service']
+        arguments: ['@inscricao.repository', '@infra.storage.service', '@onesignal.api']
+
+    app.cargo.service:
+        class: AppBundle\Service\CargoService
+        arguments: ['@cargo.repository', '@infra.storage.service']

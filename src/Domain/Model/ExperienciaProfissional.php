@@ -10,7 +10,7 @@ class ExperienciaProfissional
     private $idExperienciaProfissional;
 
     /**
-     * @var string
+     * @var Cargo
      */
     private $cargo;
 
@@ -33,4 +33,13 @@ class ExperienciaProfissional
      * @var boolean
      */
     private $trabalhoAtual;
+
+    /**
+     * ExperienciaProfissional constructor.
+     * @param Cargo $cargo
+     */
+    public function __construct(Cargo $cargo)
+    {
+        $this->cargo = $cargo;
+    }
 }

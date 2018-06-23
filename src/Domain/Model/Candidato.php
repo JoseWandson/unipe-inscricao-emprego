@@ -65,6 +65,22 @@ class Candidato
     }
 
     /**
+     * @return int
+     */
+    public function getIdCandidato()
+    {
+        return $this->idCandidato;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCpf()
+    {
+        return $this->cpf;
+    }
+
+    /**
      * @param string $fileName
      */
     public function addAnexo(string $fileName)

@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
   <entity name="Domain\Model\ExperienciaProfissional" table="experiencia_profissional">
+    <indexes>
+      <index name="IDX_95319A0ED56B1641" columns="id_cargo"/>
+    </indexes>
     <id name="idExperienciaProfissional" type="integer" column="id_experiencia_profissional">
       <generator strategy="IDENTITY"/>
     </id>
-    <field name="cargo" type="string" column="cargo" length="255" nullable="false">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
     <field name="descricao" type="text" column="descricao" nullable="false">
       <options>
         <option name="fixed"/>
@@ -17,5 +15,13 @@
     <field name="dataInicial" type="datetime" column="dt_inicio" nullable="false"/>
     <field name="dataFinal" type="datetime" column="dt_final" nullable="false"/>
     <field name="trabalhoAtual" type="boolean" column="is_trabalho_atual" nullable="true"/>
+    <many-to-one field="cargo" target-entity="Domain\Model\Cargo" fetch="LAZY">
+      <cascade>
+        <cascade-persist />
+      </cascade>
+      <join-columns>
+        <join-column name="id_cargo" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
   </entity>
 </doctrine-mapping>

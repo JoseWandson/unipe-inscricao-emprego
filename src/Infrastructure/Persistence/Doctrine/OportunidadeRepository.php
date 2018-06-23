@@ -8,7 +8,6 @@ use Domain\Repository\OportunidadeRepositoryInterface;
 
 class OportunidadeRepository extends EntityRepository implements OportunidadeRepositoryInterface
 {
-
     /**
      * @param Oportunidade $oportunidade
      * @return void
@@ -17,5 +16,22 @@ class OportunidadeRepository extends EntityRepository implements OportunidadeRep
     {
         $this->getEntityManager()->persist($oportunidade);
         $this->getEntityManager()->flush();
+    }
+
+    /**
+     * @param int $id
+     * @return Oportunidade
+     */
+    public function findOneById(int $id)
+    {
+        return $this->findOneBy(['idOportunidade' => $id]);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function buscarTodos()
+    {
+        return $this->findAll();
     }
 }

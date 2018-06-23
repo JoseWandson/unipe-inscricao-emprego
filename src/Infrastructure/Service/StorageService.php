@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 
 final class StorageService
 {
-    const ROOT_STORAGE = '/inscricao-emprego/candidato';
+    const ROOT_STORAGE = '/Users/wands/PhpstormProjects/inscricao-emprego/candidato';
     protected $fileSystem;
 
     /**

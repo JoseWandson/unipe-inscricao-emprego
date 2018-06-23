@@ -33,4 +33,12 @@ class InscricaoDTO
     {
         return $this->oportunidade;
     }
+
+    /**
+     * @param Oportunidade $oportunidade
+     */
+    public function setOportunidade($oportunidade)
+    {
+        $this->oportunidade = $oportunidade;
+    }
 }

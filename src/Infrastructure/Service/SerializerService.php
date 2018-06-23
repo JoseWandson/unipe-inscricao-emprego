@@ -41,7 +41,6 @@ class SerializerService
         try {
             return $this->serializer->deserialize($json, $tipo, 'json');
         } catch (Exception $exception) {
-            dump($exception->getMessage()); die;
             throw new SerializerServiceException();
         }
     }

@@ -35,6 +35,14 @@ class Oportunidade
     private $qtdVagas;
 
     /**
+     * @return int
+     */
+    public function getIdOportunidade()
+    {
+        return $this->idOportunidade;
+    }
+
+    /**
      * @return string
      */
     public function getTitulo()

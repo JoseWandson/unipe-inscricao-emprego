@@ -45,4 +45,20 @@ class OportunidadeController extends FOSRestController
 
         return $jsonResponseService->success($oportunidadeService->buscarPorId($id), ['grupoTeste']);
     }
+
+    /**
+     * @Rest\Get("oportunidade")
+     * @return Response
+     */
+    public function listarTodosAction()
+    {
+        $oportunidadeService = $this->get('app.oportunidade.service');
+        $jsonResponseService = $this->get('infra.json_response.service');
+
+        $oportunidades = $oportunidadeService->buscarTodos();
+        if ($oportunidades) {
+            return $jsonResponseService->success($oportunidades);
+        }
+        return $jsonResponseService->notFound();
+    }
 }

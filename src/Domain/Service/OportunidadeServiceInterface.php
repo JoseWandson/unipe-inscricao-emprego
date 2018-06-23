@@ -11,4 +11,15 @@ interface OportunidadeServiceInterface
      * @return void
      */
     public function salvar(Oportunidade $oportunidade);
+
+    /**
+     * @param int $id
+     * @return Oportunidade
+     */
+    public function buscarPorId(int $id);
+
+    /**
+     * @return mixed
+     */
+    public function buscarTodos();
 }

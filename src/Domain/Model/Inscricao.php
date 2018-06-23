@@ -43,6 +43,22 @@ class Inscricao
         $this->ativa = true;
     }
 
+    /**
+     * @return int
+     */
+    public function getIdInscricao()
+    {
+        return $this->idInscricao;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCodigoConfirmacao()
+    {
+        return $this->codigoConfirmacao;
+    }
+
     public function generateCodigoVerificacao()
     {
         $this->codigoConfirmacao = uniqid();
